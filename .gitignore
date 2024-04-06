@@ -1,0 +1,27 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+Client/hons-app/node_modules
+Client/hons-app/.pnp
+Client/hons-app.pnp.js
+
+# testing
+Client/hons-app/coverage
+
+# production
+Client/hons-app/build
+
+# misc
+Client/hons-app/.DS_Store
+Client/hons-app/.env.local
+Client/hons-app/.env.development.local
+Client/hons-app/.env.test.local
+Client/hons-app/.env.production.local
+
+Client/hons-app/npm-debug.log*
+Client/hons-app/yarn-debug.log*
+Client/hons-app/yarn-error.log*
+
+Server/models
+Server/data
+Server/model_configs/lite-model_movenet_singlepose_lightning_3.tflite

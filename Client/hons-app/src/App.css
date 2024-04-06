@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.App {
+  background-image: linear-gradient(to bottom, #000046, #1CB5E0);
+
+  width: 100vw;
+  min-height: 100vh;
+
+}
+
+.NavHome{
+  color: #ffffff;
+}
+
+
+.Nav{
+  background-image: linear-gradient(to bottom right, #000046, #1CB5E0);;
+}
+
+.FileUpload:hover {
+  -webkit-filter: brightness(70%);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.text-indent{
+  text-indent: 6rem;
+}
