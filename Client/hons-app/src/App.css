@@ -3,23 +3,222 @@
 @tailwind utilities;
 
 .App {
-  background-image: linear-gradient(to bottom, #000046, #1CB5E0);
-
+  background-image: linear-gradient(to bottom, #000046, #000000);
   width: 100vw;
-  min-height: 100vh;
-
 }
 
-.NavHome{
-  color: #ffffff;
+.HeadingContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  z-index: 2; /* Ensure it stays above the rain effect */
 }
 
-
-.Nav{
-  background-image: linear-gradient(to bottom right, #000046, #1CB5E0);;
+.HeadingFont {
+  color: rgb(7, 201, 255);
+  font-size: 180px;
+  font-family: monospace;
+  position: relative;
+  text-shadow: 0 0 10px rgb(0, 140, 255), 0 0 20px rgb(0, 140, 255), 0 0 30px rgb(0, 140, 255);
+  z-index: 2; /* Ensure it stays above the rain effect */
 }
 
-.FileUpload:hover {
+.HeadingFont::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: glitch 2s linear infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+  transform: translate(-2px, -2px);
+  color: rgb(7, 201, 255);
+  text-shadow: 0 0 5px rgb(0, 140, 255), 0 0 15px rgb(0, 140, 255);
+}
+
+.rain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 255, 0, 0.1) 0,
+    rgba(0, 132, 255, 0.2) 2px,
+    transparent 4px
+  );
+  animation: rain 10s linear infinite;
+  z-index: 1; /* Place it behind the text */
+}
+
+/* Animation for the rain effect */
+@keyframes rain {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+/* Glitch effect for the text */
+@keyframes glitch {
+  0%, 100% {
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+    transform: translate(0);
+  }
+  33% {
+    clip-path: polygon(0 0, 100% 0, 100% 15%, 0 15%);
+    transform: translate(-5px, -5px);
+  }
+  66% {
+    clip-path: polygon(0 85%, 100% 85%, 100% 100%, 0 100%);
+    transform: translate(5px, 5px);
+  }
+}
+
+.AboutMotion {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  margin-top: 2.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 100vh;
+  min-height: 75vh;
+  z-index: 2;
+}
+
+.AboutInfo {
+  text-transform: uppercase;
+  font-size: xx-large;
+  font-family: monospace;
+  color: rgb(7, 201, 255);
+  text-shadow: 0 0 10px rgb(0, 140, 255), 0 0 20px rgb(0, 140, 255), 0 0 30px rgb(0, 140, 255);
+}
+
+.AboutAppropriate {
+  text-transform: uppercase;
+  font-size: xx-large;
+  font-family: monospace;
+  color: rgb(132, 204, 22);
+  text-shadow: 0 0 10px rgb(132, 204, 22), 0 0 20px rgb(132, 204, 22), 0 0 30px rgb(132, 204, 22);
+}
+
+.AboutInappropriate {
+  text-transform: uppercase;
+  font-size: xx-large;
+  font-family: monospace;
+  color: rgb(239, 68, 68);
+  text-shadow: 0 0 10px rgb(239, 68, 68), 0 0 20px rgb(239, 68, 68), 0 0 30px rgb(239, 68, 68);
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
+}
+
+.FilterContainer {
+  display: flex;
+  flex-direction: row;
+  max-height: 100vh;
+  height: 100vh;
+  width: 100%;
+  z-index: 2;
+}
+
+.InstructionsComponent {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  margin-top: 2.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ImageComponent {
+  display: flex;
+  width: 66%;
+  margin-top: 2.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.InstructionsContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.InstructionsHeadline {
+  text-transform: uppercase;
+  font-size: xx-large;
+  font-family: monospace;
+  color: rgb(7, 201, 255);
+  text-shadow: 0 0 10px rgb(0, 140, 255), 0 0 20px rgb(0, 140, 255), 0 0 30px rgb(0, 140, 255);
+}
+
+.InstructionsText {
+  text-transform: uppercase;
+  font-size: x-large;
+  font-family: monospace;
+  color: rgb(7, 201, 255);
+  text-shadow: 0 0 10px rgb(0, 140, 255), 0 0 20px rgb(0, 140, 255), 0 0 30px rgb(0, 140, 255);
+  margin: 2.5rem;
+  width: 100%;
+}
+
+.MaleIcon {
+  text-transform: uppercase;
+  font-size: xx-large;
+  font-family: monospace;
+  color: rgb(132, 204, 22);
+  -webkit-filter: drop-shadow( 3px -3px 2px rgb(132, 204, 22));
+  filter: drop-shadow( 3px -3px 2px rgb(132, 204, 22));
+}
+
+.FemaleIcon {
+  text-transform: uppercase;
+  font-size: xx-large;
+  font-family: monospace;
+  color: rgb(255, 0, 132);
+  -webkit-filter: drop-shadow( 3px -3px 2px rgb(255, 0, 132));
+  filter: drop-shadow( 3px -3px 2px rgb(255, 0, 132));
+}
+
+.ImageFilteringContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 2.5rem;
+}
+
+.ImageContainerBlock {
+  display: flex;
+  width: 75%;
+  border: 2px dashed rgb(7, 201, 255);
+  box-shadow: 0 0 10px rgb(0, 140, 255), 0 0 20px rgb(0, 140, 255), 0 0 30px rgb(0, 140, 255);
+  margin-left: 0 2.5rem 2.5rem 2.5rem;
+  height: 100%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.ImageContainerBlock:hover {
   -webkit-filter: brightness(70%);
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
@@ -28,6 +227,292 @@
   transition: all 1s ease;
 }
 
-.text-indent{
-  text-indent: 6rem;
+.BoxText {
+  margin: 2.5rem;
+  padding: 5rem;
+  text-transform: uppercase;
+  font-size: xx-large;
+  font-family: monospace;
+  color: rgb(7, 201, 255);
+  text-shadow: 0 0 10px rgb(0, 140, 255), 0 0 20px rgb(0, 140, 255), 0 0 30px rgb(0, 140, 255);
+  width: auto;
+}
+
+.AppropriateImage {
+  width: 100%;
+  height: 100%;
+}
+
+.ResultText{
+  text-transform: uppercase;
+  font-size: x-large;
+  font-family: monospace;
+  color: rgb(7, 201, 255);
+  text-shadow: 0 0 10px rgb(0, 140, 255), 0 0 20px rgb(0, 140, 255), 0 0 30px rgb(0, 140, 255);
+  margin-top: 2.5rem;
+}
+
+.ResultAppropriate {
+  text-transform: uppercase;
+  font-size: x-large;
+  font-family: monospace;
+  color: rgb(132, 204, 22);
+  text-shadow: 0 0 10px rgb(132, 204, 22), 0 0 20px rgb(132, 204, 22), 0 0 30px rgb(132, 204, 22);
+}
+
+.ResultInappropriate {
+  text-transform: uppercase;
+  font-size: x-large;
+  font-family: monospace;
+  color: rgb(239, 68, 68);
+  text-shadow: 0 0 10px rgb(239, 68, 68), 0 0 20px rgb(239, 68, 68), 0 0 30px rgb(239, 68, 68);
+}
+
+.ButtonClearImage {
+  text-transform: uppercase;
+  font-size: x-large;
+  font-family: monospace;
+  color: rgb(7, 201, 255);
+  text-shadow: 0 0 10px rgb(0, 140, 255), 0 0 20px rgb(0, 140, 255), 0 0 30px rgb(0, 140, 255);
+  border: 4px solid rgb(7, 201, 255);
+
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  text-align: center;
+
+}
+
+.ButtonClearImage:hover {
+  box-shadow: 0 0 10px rgb(0, 140, 255), 0 0 20px rgb(0, 140, 255), 0 0 30px rgb(0, 140, 255);
+  transition: ease-in-out 0.3s;
+  background-color: rgb(7, 201, 255);
+  color: #000000;
+  text-shadow: 0 0 10px rgb(7, 201, 255), 0 0 20px rgb(7, 201, 255), 0 0 30px rgb(7, 201, 255);
+  border: 4px solid rgb(7, 201, 255);
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: transform 0.2s;
+  transform: translateY(-2px);
+  transition: transform 0.2s;
+  text-decoration: none;
+}
+
+.ButtonClearImage::before {
+  content: attr(data-text);
+  position: absolute;
+  animation: glitch 2s linear infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+  transform: translate(-2px, -2px);
+  color: rgb(7, 201, 255);
+  text-shadow: 0 0 5px rgb(0, 140, 255), 0 0 15px rgb(0, 140, 255);
+  text-align: center;
+  z-index: 2;
+}
+
+.FooterContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: 2.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.FooterText {
+  font-size: medium;
+  text-align: left;
+  color: white;
+  width: 100%;
+}
+
+/* Media Queries for different sized devices */
+
+@media (max-width: 640px) {
+  /* Headings */
+  .HeadingFont {
+    font-size: 48px;
+    text-align: center;
+  }
+
+  /* General Text */
+  .AboutInfo,
+  .AboutAppropriate,
+  .AboutInappropriate,
+  .InstructionsHeadline,
+  .MaleIcon,
+  .FemaleIcon,
+  .BoxText {
+    font-size: large;
+    text-align: center;
+  }
+
+  .InstructionsText,
+  .ResultText,
+  .ResultAppropriate,
+  .ResultInappropriate,
+  .ButtonClearImage {
+    font-size: medium;
+    text-align: center;
+  }
+
+  /* About/Footer Layouts */
+  .AboutMotion {
+    width: 100%;
+    margin: 1rem auto;
+    padding: 0 1rem;
+  }
+
+  .FooterContainer {
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: 100%;
+    margin: 25rem auto;
+    padding: 0 1rem;
+    min-height: 25dvh;
+  }
+
+  .ImageComponent,
+  .InstructionsComponent {
+    margin-top: 1rem;
+    width: 100%;
+    flex: 1 1 auto;
+  }
+
+  .FilterContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    min-height: 100dvh; /* Changed from height: 100vh */
+    width: 100%;
+    z-index: 2;
+  }
+
+  .InstructionsContainer {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .InstructionsContainer > div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-left: -2.5rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ImageContainerBlock {
+    flex-direction: column;
+    width: 90%;
+    margin: 1rem auto;
+    height: auto;
+  }
+
+  /* Buttons */
+  .ButtonClearImage {
+    padding: 0.5rem 1rem;
+    margin: 1rem auto;
+  }
+
+  /* Fix glitch text overflow */
+  .HeadingFont::before {
+    font-size: inherit;
+  }
+
+  .BoxText {
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  .HeadingFont {
+    font-size: 72px;
+    text-align: center;
+  }
+
+  .AboutMotion,
+  .InstructionsComponent,
+  .ImageComponent {
+    width: 95%;
+    margin: 1.5rem auto;
+  }
+
+  .FilterContainer {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .BoxText {
+    font-size: x-large;
+    padding: 2rem;
+  }
+
+  .ImageContainerBlock {
+    width: 95%;
+    flex-direction: column;
+    margin: 2rem auto;
+    height: auto;
+    padding: 1 0;
+  }
+
+  .FooterContainer {
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: 100%;
+    margin: 35rem auto;
+    padding: 0 1rem;
+    min-height: 55dvh;
+  }
+}
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .HeadingFont {
+    font-size: 120px;
+  }
+
+  .AboutMotion {
+    width: 85%;
+  }
+
+  .InstructionsText {
+    font-size: x-large;
+  }
+
+  .BoxText {
+    font-size: x-large;
+  }
+
+  .ImageContainerBlock {
+    width: 85%;
+    margin-top: 15rem;
+  }
+
+  .FooterContainer {
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    min-height: 50dvh;
+  }
+
+}
+
+@media (min-width: 1025px) {
+  .HeadingFont {
+    font-size: 180px;
+  }
+
+  .AboutMotion {
+    width: 75%;
+  }
+
+  .ImageContainerBlock {
+    width: 75%;
+  }
 }

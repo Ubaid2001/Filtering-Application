@@ -1,6 +1,3 @@
-# Ubaid Mahmood
-# S1906881
-
 # Import Libraries
 import tensorflow as tf
 import numpy as np

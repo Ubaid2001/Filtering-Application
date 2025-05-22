@@ -1,6 +1,3 @@
-# Ubaid Mahmood
-# S1906881
-
 # This is the initiation of a Flask server, the Client-side sends requests to the server in the form of http.
 
 # importing libraries
@@ -15,7 +12,6 @@ from werkzeug.utils import secure_filename
 from model_configs.GenderDetection import GenderDetection
 from model_configs.ClothesDetection import ClothesDetection
 from model_configs.Movenet import Movenet
-# from blueprints.fileupload import fileupload_bp
 
 # This will remove the warnings from tensorflow about AVX
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
@@ -32,7 +28,6 @@ print("")
 
 
 app = Flask(__name__)
-# app.register_blueprint(fileupload_bp)
 
 # The enable and block print methods, disables or enables any information from being printed in the terminal.
 # 
@@ -74,11 +69,6 @@ def block_image(result1, result2, gender):
             isBlock = True
     
     return isBlock
-
-
-# @app.route('/')
-# def hello():
-#     return 'The Name is, Ubby G Outlaws!'
 
 
 # Constructs the paths, which the images will be saved.
@@ -166,10 +156,5 @@ if __name__ == '__main__':
 
     clothes_detection = ClothesDetection()
     Cmodel = clothes_detection.config_model()
-    
-    # fileupload(Gmodel)
-
-    # app.run(debug=True)
-    
 
     app.run()
