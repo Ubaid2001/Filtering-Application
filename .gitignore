@@ -16,7 +16,6 @@ Client/hons-app/.DS_Store
 Client/hons-app/.env.local
 Client/hons-app/.env.development.local
 Client/hons-app/.env.test.local
-Client/hons-app/.env
 Client/hons-app/.env.production.local
 
 Client/hons-app/npm-debug.log*
@@ -26,5 +25,4 @@ Client/hons-app/yarn-error.log*
 Server/models
 Server/data
 Server/model_configs/lite-model_movenet_singlepose_lightning_3.tflite
-Server/static/uploads
-Server/static/uploads/*
+Server/static/uploads/*.*
