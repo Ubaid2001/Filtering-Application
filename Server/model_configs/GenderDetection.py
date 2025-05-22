@@ -1,6 +1,3 @@
-# Ubaid Mahmood
-# S1906881
-
 # Import Libraries
 import tensorflow as tf
 from keras.callbacks import TensorBoard as tb

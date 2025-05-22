@@ -1,6 +1,3 @@
-# Ubaid Mahmood
-# S1906881
-
 # Import Libraries
 import numpy
 import os

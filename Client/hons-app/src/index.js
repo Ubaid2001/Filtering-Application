@@ -1,7 +1,3 @@
-// Ubaid Mahmood
-// S1906881
-// BS/c Hons Project
-
 // Import Libraries
 import React from 'react';
 import ReactDOM from 'react-dom/client';
