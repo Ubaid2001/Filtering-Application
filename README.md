@@ -1,6 +1,6 @@
 # Islamic Filtering Web Application
 
-![Islamic Filtering Header]<img width="1430" alt="1" src="https://github.com/user-attachments/assets/5d2e8c6d-8fef-4d0c-a1e6-5f61aa01fed7" />
+<img width="1430" alt="1" src="https://github.com/user-attachments/assets/5d2e8c6d-8fef-4d0c-a1e6-5f61aa01fed7" />
 
 
 ## Overview
@@ -18,7 +18,7 @@ This tool is designed to **filter out images that are deemed inappropriate** acc
 
 ## Application Logic and Flow
 
-![Description Page]<img width="1424" alt="2" src="https://github.com/user-attachments/assets/2a56d34e-8d12-4fe6-a30b-b23c8b8e35b9" />
+<img width="1424" alt="2" src="https://github.com/user-attachments/assets/2a56d34e-8d12-4fe6-a30b-b23c8b8e35b9" />
 
 
 1. **Step 1**: An image is uploaded by the user via drag-and-drop or file picker.
@@ -32,7 +32,7 @@ If the image is classified as `INAPPROPRIATE`, it will **not be displayed**. Oth
 
 ## Interface and Styling
 
-![Drag and Drop Interface]<img width="1430" alt="3" src="https://github.com/user-attachments/assets/12d4193e-eddd-4f88-bdc6-2b0c2db66ded" />
+<img width="1430" alt="3" src="https://github.com/user-attachments/assets/12d4193e-eddd-4f88-bdc6-2b0c2db66ded" />
 
 The design of the app embraces a **neon futuristic theme**, utilizing deep blues and glowing cyan highlights to create a visually engaging and modern experience. Key styling features include:
 
