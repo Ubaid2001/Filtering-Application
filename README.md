@@ -64,7 +64,7 @@ This web app is deployed via Flask for backend inference and React for the front
 
 To deploy locally:
 1. Clone this repository.
-2. Set up Python or Conda GPU usage virtual environment and install requirements.
+2. Set up Python or Conda (GPU Usage) virtual environment and install requirements.
 3. Run the Flask backend `app.py`.
 4. Launch React frontend with `npm start`.
 
